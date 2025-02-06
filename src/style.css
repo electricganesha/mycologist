@@ -1,0 +1,267 @@
+.game-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  background-color: #2c3e50;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+.game-header button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.game-header button:hover {
+  background-color: #2980b9;
+}
+
+.shop-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.shop-status.open {
+  background-color: #27ae60;
+}
+
+.shop-status.closed {
+  background-color: #c0392b;
+}
+
+.game-main {
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.game-3d-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.game-ui {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.shop-area {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.customer-area {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.inventory-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.inventory-item:hover {
+  transform: translateY(-2px);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.item-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.item-type {
+  background-color: #e0e0e0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.item-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.price {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.stock {
+  color: #7f8c8d;
+}
+
+.item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.item-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.item-actions button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.item-actions button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Customer Styles */
+.customer {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.customer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.customer-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.customer-budget {
+  background-color: #2ecc71;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.customer-dialog {
+  background-color: white;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  font-style: italic;
+  color: #666;
+}
+
+.customer-wants {
+  margin: 0.5rem 0;
+}
+
+.customer-wants h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.customer-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.serve-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.serve-button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.serve-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.customer-patience {
+  height: 4px;
+  background-color: #ecf0f1;
+  border-radius: 2px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.patience-bar {
+  height: 100%;
+  background-color: #e74c3c;
+  transition: width 1s linear;
+}
